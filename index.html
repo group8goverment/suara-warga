@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7f2">
+  <meta name="description" content="Suara Warga menghubungkan kontribusi nyata masyarakat dengan pembangunan fasilitas publik yang transparan.">
+  <title>Suara Warga — Partisipasi Nyata, Anggaran Transparan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navigasi utama">
+      <a class="brand" href="#" aria-label="Suara Warga beranda">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 3 36 12v16L20 37 4 28V12L20 3Z" fill="currentColor"/><path d="M12 20.5 17.5 26 29 14.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-copy"><strong>Suara Warga</strong><small>Warga bergerak, kota bertumbuh</small></span>
+      </a>
+
+      <div class="nav-label">MENU UTAMA</div>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="dashboard">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="5" rx="2"/><rect x="13" y="10" width="8" height="11" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/></svg>
+          <span>Ringkasan</span>
+        </button>
+        <button class="nav-link" data-view="programs">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11M2 20h20M9 20v-6h6v6M8 10h.01M16 10h.01"/></svg>
+          <span>Program warga</span><span class="nav-count" id="navProgramCount">04</span>
+        </button>
+        <button class="nav-link" data-view="activity">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>
+          <span>Aktivitas</span>
+        </button>
+        <button class="nav-link admin-nav" data-view="admin" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h.01M15 10h.01M9 14h.01M15 14h.01M10 21v-4h4v4"/></svg>
+          <span>Dashboard dinas</span>
+        </button>
+        <button class="nav-link" data-view="ledger">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h4"/></svg>
+          <span>Ledger anggaran</span>
+        </button>
+      </nav>
+
+      <div class="nav-label community-label">KOMUNITAS</div>
+      <div class="community-card">
+        <div class="community-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m3-3h-6"/></svg></div>
+        <strong>Suara lokal, dampak nyata</strong>
+        <p>Setiap kontribusi membantu program prioritas bergerak lebih cepat.</p>
+        <button class="text-button" data-view="programs">Jelajahi program <span aria-hidden="true">→</span></button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="help-link"><span class="help-icon">?</span><span><strong>Butuh bantuan?</strong><small>Pusat panduan warga</small></span><span class="chevron">›</span></div>
+        <div class="user-profile">
+          <div class="avatar" id="sidebarAvatar">??</div><div class="user-copy"><strong id="sidebarUserName">Belum masuk</strong><small id="sidebarUserRole">Silakan masuk ke akun</small></div>
+          <button class="more-button" aria-label="Menu profil">···</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Portal Warga</span><span class="breadcrumb-slash">/</span><strong id="breadcrumbCurrent">Ringkasan</strong></div>
+        <div class="topbar-actions">
+          <label class="search-box">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input id="searchInput" type="search" placeholder="Cari program..." aria-label="Cari program">
+            <span class="search-shortcut">⌘ K</span>
+          </label>
+          <button class="icon-button notification-button" aria-label="Notifikasi">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg><i></i>
+          </button>
+          <span class="top-role" id="topRole">Tamu</span>
+          <button class="top-avatar" id="authAction" aria-label="Login atau keluar">Masuk</button>
+        </div>
+      </header>
+
+      <main class="content" id="mainContent">
+        <section class="welcome-row">
+          <div>
+            <div class="date-label"><span class="status-dot"></span> RABU, 21 OKTOBER 2026 <span class="date-divider">·</span> BANDUNG, JAWA BARAT</div>
+            <h1 id="pageTitle">Halo, <span id="welcomeName">Warga</span> <span class="wave">✳</span></h1>
+            <p class="welcome-subtitle" id="pageSubtitle">Kota yang lebih baik dimulai dari satu aksi kecilmu.</p>
+          </div>
+          <button class="primary-button" id="openProposal">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+            Ajukan program
+          </button>
+        </section>
+        <div class="prototype-banner"><strong>Prototipe lokal</strong><span>Data program dan anggaran awal adalah contoh; bukan data APBD resmi.</span></div>
+        <div class="account-notice" role="note"><strong>Info akun</strong><span>Admin dapat mengubah nama tampilan akun. Hubungi admin jika nama Anda perlu diperbarui; email untuk login tidak berubah.</span></div>
+
+        <section class="hero-card" aria-label="Program paling aktif">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> DAMPAK BERSAMA KITA</div>
+            <h2>Perubahan nyata dimulai<br> dari <em>aksi kita.</em></h2>
+            <p>Setiap kontribusi warga menggerakkan fasilitas publik dan membuka alokasi anggaran yang transparan.</p>
+            <button class="hero-button" data-view="programs">Lihat program aktif <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="hero-art">
+    <img
+    class="hero-visual"
+    src="assets/Plaza Civic Suara Warga.png"
+    alt="Gedung pelayanan publik Suara Warga"
+/>
+
+    <div class="art-stats">
+        <span class="stat-avatars">
+            <i>R</i><i>D</i><i>A</i><b>+2k</b>
+        </span>
+        <span>
+            <strong id="heroResidents">0</strong>
+            <small>warga telah bergerak</small>
+        </span>
+    </div>
+</div>
+        </section>
+
+        <section class="admin-panel" id="adminPanel" hidden>
+          <div class="section-heading admin-heading"><div><div class="section-kicker">PANEL KENDALI PEMERINTAH</div><h2>Dashboard dinas</h2><p>Kelola inisiatif, verifikasi bukti warga, dan catat persetujuan alokasi.</p></div><button class="primary-button" id="adminNewProject">+ Buka inisiatif</button></div>
+          <div class="admin-summary" id="adminSummary"></div>
+          <div class="admin-panel-grid">
+            <section class="admin-box"><div class="admin-box-heading"><div><strong>Bukti kontribusi warga</strong><small>Periksa laporan dan verifikasi sebelum pencairan.</small></div><span class="admin-counter" id="pendingCount">0</span></div><div id="verificationList" class="verification-list"></div></section>
+            <section class="admin-box"><div class="admin-box-heading"><div><strong>Daftar anggota</strong><small>Kelola akses warga dan petugas dinas.</small></div><button class="small-action" id="openMemberRegistration">+ Daftarkan anggota</button></div><div id="memberList" class="member-list"></div></section>
+          </div>
+          <div class="demo-notice"><strong>Mode prototipe:</strong> Persetujuan dan pencairan di sini hanya mencatat simulasi, bukan memindahkan dana pemerintah.</div>
+        </section>
+
+        <section class="metrics-grid" aria-label="Statistik komunitas">
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon green-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6m3-3h-6"/></svg></span><span class="metric-change">↑ 12,8%</span></div>
+            <div class="metric-value" id="metricResidents">0</div><div class="metric-label">Warga berkontribusi</div><div class="metric-foot">di portal ini · data lokal</div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon lilac-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11M2 20h20M9 20v-6h6v6"/></svg></span><span class="metric-change">↑ 3 baru</span></div>
+            <div class="metric-value" id="metricPrograms">4</div><div class="metric-label">Program komunitas</div><div class="metric-foot">butuh kontribusi atau siap berjalan</div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon amber-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M17 7H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg></span><span class="metric-change">Tersalurkan</span></div>
+            <div class="metric-value" id="metricDisbursed">Rp 0</div><div class="metric-label">Alokasi disetujui · simulasi</div><div class="metric-foot">dari total <span id="metricTotalBudget">Rp 555 jt</span></div>
+          </article>
+          <article class="metric-card">
+            <div class="metric-top"><span class="metric-icon blue-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span class="metric-change live-change"><i></i> Langsung</span></div>
+            <div class="metric-value">8<span class="metric-unit"> hari</span></div><div class="metric-label">Rata-rata mulai berjalan</div><div class="metric-foot">setelah ambang tercapai</div>
+          </article>
+        </section>
+
+        <section class="peer-review-section" id="peerReviewSection" hidden>
+          <div class="activity-heading"><div><div class="section-kicker">VERIFIKASI SILANG WARGA</div><h2>Periksa laporan di sekitarmu</h2></div><span class="ledger-live">Satu pemeriksaan warga sebelum tinjauan admin</span></div>
+          <p class="ledger-intro">Pastikan laporan sesuai informasi yang tersedia. Verifikasi silang adalah masukan warga dan tetap diperiksa admin.</p>
+          <div class="peer-review-list" id="peerReviewList"></div>
+        </section>
+
+        <section class="program-section" id="programSection">
+          <div class="section-heading">
+            <div><div class="section-kicker">DARI WARGA, UNTUK KITA</div><h2>Program prioritas warga <span class="section-count" id="sectionProgramCount">12</span></h2><p>Pilih program, beri kontribusi nyata, dan bantu wujudkan perubahan.</p></div>
+            <button class="secondary-button" id="viewAllPrograms">Lihat semua program <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="filter-row">
+            <div class="filter-tabs" role="tablist" aria-label="Filter program">
+                <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">Semua <span>4</span></button>
+                <button class="filter-tab" data-filter="active" role="tab" aria-selected="false">Butuh kontribusi <span>3</span></button>
+                <button class="filter-tab" data-filter="ready" role="tab" aria-selected="false">Siap berjalan <span>1</span></button>
+            </div>
+            <button class="sort-button" id="sortButton"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10m-7 6h4"/></svg> Paling relevan <span>⌄</span></button>
+          </div>
+          <div class="program-grid" id="programGrid" aria-live="polite"></div>
+          <div class="empty-state" id="emptyState" hidden><span class="empty-icon">⌕</span><strong>Program tidak ditemukan</strong><p>Coba kata kunci atau filter yang berbeda.</p></div>
+          <div class="load-more-wrap"><button class="load-more-button" id="loadMoreButton">Usulkan program lainnya <span aria-hidden="true">＋</span></button></div>
+        </section>
+
+        <section class="ledger-section" id="ledgerSection">
+          <div class="activity-heading"><div><div class="section-kicker">CATATAN PUBLIK · SIMULASI LOKAL</div><h2>Ledger transparansi anggaran</h2></div><span class="ledger-live"><i></i> Diperbarui langsung</span></div>
+          <p class="ledger-intro">Riwayat kontribusi terverifikasi dan persetujuan alokasi. Catatan prototipe disimpan di perangkat ini.</p>
+          <div class="ledger-table-wrap"><table class="ledger-table"><thead><tr><th>Waktu</th><th>Program / aktivitas</th><th>Referensi</th><th>Status</th><th>Nilai simulasi</th></tr></thead><tbody id="ledgerBody"></tbody></table></div>
+          <div class="ledger-empty" id="ledgerEmpty" hidden>Belum ada catatan ledger. Kontribusi yang diverifikasi akan tampil di sini.</div>
+        </section>
+
+        <section class="activity-section" id="activitySection">
+          <div class="activity-heading"><div><div class="section-kicker">GERAKAN KOMUNITAS</div><h2>Aktivitas terbaru</h2></div><button class="view-activity" data-view="activity">Lihat semua <span aria-hidden="true">→</span></button></div>
+          <div class="activity-list" id="activityList"></div>
+        </section>
+        <footer class="page-footer"><span>© 2026 Suara Warga · Prototipe</span><span>Dibuat bersama warga Bandung <span class="footer-heart">♥</span></span><a href="#mainContent">Kebijakan privasi</a></footer>
+      </main>
+    </div>
+  </div>
+
+  <dialog class="app-dialog" id="contributionDialog" aria-labelledby="contributionTitle">
+    <form id="contributionForm">
+      <button type="button" class="dialog-close" data-close="contributionDialog" aria-label="Tutup">×</button>
+      <div class="dialog-kicker">AKSI NYATA, DAMPAK BERSAMA</div>
+      <h2 id="contributionTitle">Kontribusi untuk program</h2>
+      <p class="dialog-description" id="contributionDescription"></p>
+      <input type="hidden" id="contributionProgramId">
+      <label class="field-label" for="contributionType">Pilih bentuk kontribusi</label>
+      <select id="contributionType" required>
+        <option value="">Pilih kontribusi</option>
+        <option value="Relawan">Menjadi relawan</option>
+        <option value="Pengawasan">Pengawasan lapangan</option>
+        <option value="Keahlian teknis">Keahlian teknis</option>
+        <option value="Masukan warga">Masukan dan data warga</option>
+      </select>
+      <label class="field-label" for="contributionNote">Catatan singkat <span>(opsional)</span></label>
+      <textarea id="contributionNote" rows="3" placeholder="Ceritakan pengalaman atau ketersediaanmu..."></textarea>
+      <label class="field-label" for="evidenceFile">Bukti aktivitas <span>(foto atau PDF, maks. 5 MB)</span></label>
+      <input id="evidenceFile" type="file" accept="image/*,.pdf">
+      <div class="evidence-actions"><button type="button" class="small-action" id="captureLocation">Tambahkan lokasi GPS</button><span id="locationStatus">Lokasi belum ditambahkan</span></div>
+      <button class="primary-button dialog-submit" type="submit">Kirim kontribusi <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">Kontribusi ini tercatat sebagai partisipasi, bukan sekadar suara.</p>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" id="initiativeDialog" aria-labelledby="initiativeTitle">
+    <form id="initiativeForm">
+      <button type="button" class="dialog-close" data-close="initiativeDialog" aria-label="Tutup">×</button>
+      <div class="dialog-kicker">PANEL DINAS</div><h2 id="initiativeTitle">Buka inisiatif proyek</h2>
+      <p class="dialog-description">Tetapkan pagu anggaran dan kuota peran. Program akan siap dieksekusi saat semua kuota wajib terpenuhi.</p>
+      <label class="field-label" for="initiativeName">Nama proyek</label><input id="initiativeName" required maxlength="70" placeholder="Nama proyek fasilitas publik">
+      <label class="field-label" for="initiativeLocation">Lokasi proyek</label><input id="initiativeLocation" required maxlength="70" placeholder="Kelurahan, kecamatan">
+      <label class="field-label" for="initiativeDescription">Tujuan dan kebutuhan</label><textarea id="initiativeDescription" required maxlength="180" rows="2" placeholder="Jelaskan kebutuhan warga..."></textarea>
+      <label class="field-label" for="initiativeBudget">Pagu anggaran (rupiah)</label><input id="initiativeBudget" type="number" required min="1000000" step="100000" placeholder="100000000">
+      <div class="field-pair"><div><label class="field-label" for="initiativeVolunteers">Kuota relawan</label><input id="initiativeVolunteers" type="number" min="0" value="5" required></div><div><label class="field-label" for="initiativeSupervisors">Kuota pengawas</label><input id="initiativeSupervisors" type="number" min="0" value="2" required></div></div>
+      <label class="field-label" for="initiativeExperts">Kuota tenaga ahli</label><input id="initiativeExperts" type="number" min="0" value="1" required>
+      <button class="primary-button dialog-submit" type="submit">Publikasikan inisiatif →</button><p class="privacy-note">Rilis proyek di sini hanya simulasi; bukan penerbitan anggaran resmi.</p>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" id="memberDialog" aria-labelledby="memberTitle">
+    <form id="memberForm">
+      <button type="button" class="dialog-close" data-close="memberDialog" aria-label="Tutup">×</button>
+      <div class="dialog-kicker">MANAJEMEN AKSES</div><h2 id="memberTitle">Daftarkan anggota baru</h2><p class="dialog-description">Sebagai admin prototipe, kamu dapat mendaftarkan akun warga atau admin lain di perangkat ini.</p>
+      <label class="field-label" for="memberName">Nama lengkap</label><input id="memberName" required maxlength="70">
+      <label class="field-label" for="memberEmail">Email</label><input id="memberEmail" type="email" required maxlength="100">
+      <label class="field-label" for="memberRole">Peran akun</label><select id="memberRole"><option value="resident">Warga</option><option value="admin">Admin pemerintah</option></select>
+      <label class="field-label" for="memberPassword">Kata sandi sementara</label><input id="memberPassword" type="password" required minlength="8" autocomplete="new-password">
+      <button class="primary-button dialog-submit" type="submit">Daftarkan anggota →</button>
+    </form>
+  </dialog>
+
+  <dialog class="app-dialog" id="memberEditDialog" aria-labelledby="memberEditTitle">
+    <form id="memberEditForm">
+      <button type="button" class="dialog-close" data-close="memberEditDialog" aria-label="Tutup">×</button>
+      <div class="dialog-kicker">MANAJEMEN AKSES</div><h2 id="memberEditTitle">Ubah nama tampilan</h2>
+      <p class="dialog-description">Perubahan nama akan terlihat di profil akun. Email untuk login tidak berubah.</p>
+      <label class="field-label" for="memberEditName">Nama tampilan baru</label><input id="memberEditName" required maxlength="70" autocomplete="name">
+      <button class="primary-button dialog-submit" type="submit">Simpan nama →</button>
+    </form>
+  </dialog>
+
+  <section class="auth-screen" id="authScreen" aria-labelledby="authTitle">
+    <div class="auth-card">
+      <a class="brand auth-brand" href="#" aria-label="Suara Warga"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M20 3 36 12v16L20 37 4 28V12L20 3Z" fill="currentColor"/><path d="M12 20.5 17.5 26 29 14.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand-copy"><strong>Suara Warga</strong><small>Partisipasi nyata, anggaran transparan</small></span></a>
+      <div class="auth-eyebrow">PORTAL PARTISIPASI PUBLIK</div><h1 id="authTitle">Bangun kota, bersama.</h1><p class="auth-intro">Masuk untuk berkontribusi, mengawasi proyek, dan melihat transparansi program publik.</p>
+      <p class="account-notice auth-account-notice" role="note"><strong>Info akun</strong><span>Admin dapat mengubah nama tampilan akun. Hubungi admin jika nama Anda perlu diperbarui; email untuk login tidak berubah.</span></p>
+      <div class="auth-tabs" role="tablist"><button class="auth-tab active" data-auth-mode="login" role="tab" aria-selected="true">Masuk</button><button class="auth-tab" data-auth-mode="register" role="tab" aria-selected="false">Registrasi warga</button></div>
+      <form id="authForm">
+        <label class="field-label" for="authName" id="authNameLabel" hidden>Nama lengkap</label><input id="authName" autocomplete="name" maxlength="70" placeholder="Nama lengkap" hidden>
+        <label class="field-label" for="authEmail">Email</label><input id="authEmail" type="email" autocomplete="username" placeholder="nama@email.com" required>
+        <label class="field-label" for="authPassword">Kata sandi</label><input id="authPassword" type="password" autocomplete="current-password" minlength="8" placeholder="Minimal 8 karakter" required>
+        <label class="auth-terms" id="authTerms" hidden><input id="termsCheck" type="checkbox"> Saya memahami ini prototipe lokal, bukan layanan pemerintah resmi.</label>
+        <p class="auth-error" id="authError" role="alert"></p><button class="primary-button auth-submit" type="submit" id="authSubmit">Masuk ke portal →</button>
+      </form>
+      <div class="demo-credentials"><strong>Akses demo dashboard admin</strong><span>Email: admin@suarawarga.id</span><span>Kata sandi: SuaraWarga2026!</span><small>Data tersimpan di browser ini saja. Jangan gunakan data pribadi atau kata sandi asli.</small></div>
+      <p class="auth-identity-note">Verifikasi NIK/e-KTP belum terhubung. Prototipe tidak mengumpulkan atau menyimpan NIK.</p>
+    </div>
+  </section>
+  <dialog class="app-dialog" id="proposalDialog" aria-labelledby="proposalTitle">
+    <form id="proposalForm">
+      <button type="button" class="dialog-close" data-close="proposalDialog" aria-label="Tutup">×</button>
+      <div class="dialog-kicker">MULAI DARI LINGKUNGANMU</div>
+      <h2 id="proposalTitle">Ajukan program warga</h2>
+      <p class="dialog-description">Usulan akan ditinjau bersama warga sebelum masuk tahap kontribusi.</p>
+      <label class="field-label" for="proposalName">Nama program</label>
+      <input id="proposalName" type="text" required maxlength="70" placeholder="Contoh: Perbaikan taman RW 05">
+      <label class="field-label" for="proposalLocation">Lokasi</label>
+      <input id="proposalLocation" type="text" required maxlength="60" placeholder="Kelurahan atau kecamatan">
+      <label class="field-label" for="proposalDescription">Masalah yang ingin diselesaikan</label>
+      <textarea id="proposalDescription" required maxlength="180" rows="3" placeholder="Jelaskan kebutuhan dan manfaat program untuk warga..."></textarea>
+      <label class="field-label" for="proposalThreshold">Target kontribusi warga</label>
+      <select id="proposalThreshold"><option value="25">25 warga</option><option value="40">40 warga</option><option value="60">60 warga</option><option value="100">100 warga</option></select>
+      <button class="primary-button dialog-submit" type="submit">Kirim usulan <span aria-hidden="true">→</span></button>
+      <p class="privacy-note">Usulanmu akan tampil dalam daftar program komunitas.</p>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>
+
